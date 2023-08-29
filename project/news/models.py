@@ -23,6 +23,9 @@ class Post(models.Model):
     content = models.TextField(default='Default content', verbose_name='текст')
     #rating = models.IntegerField(default=0.0)
 
+    def __str__(self):
+        return f'{self.title}: {self.date_create.strftime("%Y-%m-%d %H:%M:%S")} : {self.content[:20]}'
+
 
 
 
